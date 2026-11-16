@@ -42,7 +42,8 @@ export async function sendNotification(mail: {
     return { sent: false, reason: 'not-configured', error: 'SMTP_HOST, SMTP_USER, SMTP_PASS or LEADS_TO_EMAIL is not set' };
   }
   try {
-    await getTransport(cfg).sendMail({ from: cfg.from, to: cfg.to, ...mail });
+    // await getTransport(cfg).sendMail({ from: cfg.from, to: cfg.to, ...mail });
+    await getTransport(cfg).sendMail({ from: cfg.from, to: cfg.to, cc: cfg.cc, bcc: cfg.bcc, ...mail });
     return { sent: true };
   } catch (err) {
     console.error('[mail] could not send lead notification', err);

@@ -11,6 +11,9 @@ export interface MailConfig {
   from: string;
   /** Where lead notifications go (comma separated list allowed). */
   to: string;
+  /** Optional copies (comma separated lists allowed). */
+  cc?: string;
+  bcc?: string;
 }
 
 export function readMailConfig(env: Record<string, string | undefined> = process.env): MailConfig | null {
@@ -28,5 +31,7 @@ export function readMailConfig(env: Record<string, string | undefined> = process
     pass,
     from: env.MAIL_FROM?.trim() || `OneMillionSqFt <${user}>`,
     to,
+    cc: env.LEADS_CC_EMAIL?.trim() || undefined,
+    bcc: env.LEADS_BCC_EMAIL?.trim() || undefined,
   };
 }
