@@ -38,7 +38,8 @@ export function normalizePhone(raw: string): string | null {
 export const isEmail = (v: string): boolean => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) && v.length <= 254;
 
 const RESERVED = new Set([
-  'name', 'phone', 'email', 'message', 'hp', 'propertySlug', 'sourceUrl', 'kind',
+  // 'name', 'phone', 'email', 'message', 'hp', 'propertySlug', 'sourceUrl', 'kind',
+  'name', 'phone', 'email', 'message', 'ft', 'propertySlug', 'sourceUrl', 'kind',
 ]);
 
 export function validateLead(kind: LeadKind, body: unknown): LeadResult {

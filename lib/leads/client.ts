@@ -14,7 +14,12 @@ export async function submitLead(kind: LeadKind, data: Record<string, unknown>):
     res = await fetch(`/api/${kind}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...data, sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined }),
+      // body: JSON.stringify({ ...data, sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined }),
+      body: JSON.stringify({
+        ...data,
+        sourceUrl: typeof window !== 'undefined' ? window.location.href : undefined,
+        ft: typeof performance !== 'undefined' ? Math.round(performance.now()) : undefined,
+      }),
     });
   } catch {
     throw new LeadSubmitError('Network error. Please check your connection and try again.');

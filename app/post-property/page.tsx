@@ -18,7 +18,7 @@ import { useRouter } from 'next/navigation';
 import { useEnquiry } from '@/components/layout/EnquiryProvider';
 import { CATEGORIES, CATEGORY_BY_SLUG, isCategorySlug } from '@/lib/constants/property';
 import { LeadSubmitError, submitLead } from '@/lib/leads/client';
-import { Honeypot } from '@/components/layout/Honeypot';
+// import { Honeypot } from '@/components/layout/Honeypot';
 
 /** Same four categories the search filters use, so a posted property maps 1:1 onto the catalogue. */
 const PROPERTY_TYPES = CATEGORIES.map((c) => ({ value: c.slug, label: c.singular }));
@@ -74,7 +74,7 @@ export default function PostPropertyPage() {
     const [errors, setErrors] = useState<Partial<Record<keyof PostPropertyForm, string>>>({});
     const { openEnquiry } = useEnquiry();
     const [submitError, setSubmitError] = useState('');
-    const [trap, setTrap] = useState('');
+    // const [trap, setTrap] = useState('');
     const showsBhk = !isCategorySlug(form.propertyType) || CATEGORY_BY_SLUG[form.propertyType].hasBedrooms;
 
     const update = (field: keyof PostPropertyForm, value: string) => {
@@ -116,7 +116,8 @@ export default function PostPropertyPage() {
         setSubmitError('');
         setStatus('submitting');
         try {
-            await submitLead('post-property', { ...form, bhk: showsBhk ? form.bhk : '', hp: trap });
+            // await submitLead('post-property', { ...form, bhk: showsBhk ? form.bhk : '', hp: trap });
+            await submitLead('post-property', { ...form, bhk: showsBhk ? form.bhk : '' });
             setStatus('idle');
             setStep('success');
         } catch (err) {
@@ -236,7 +237,7 @@ export default function PostPropertyPage() {
                             </form>
                         ) : (
                             <form onSubmit={handleSubmit} className="flex flex-col gap-4 px-6 py-6 sm:px-8">
-                                <Honeypot value={trap} onChange={setTrap} />
+                                {/* <Honeypot value={trap} onChange={setTrap} /> */}
                                 <button
                                     type="button"
                                     onClick={() => setStep('phone')}

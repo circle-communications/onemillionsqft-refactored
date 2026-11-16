@@ -120,7 +120,7 @@ function FooterColumn({ title, links }: { title: string; links: LinkItem[] }) {
 /** `popularSearches` is computed from live listings by the server wrapper (components/layout/Footer.tsx). */
 export function FooterContent({ popularSearches }: { popularSearches: LinkItem[] }) {
   const [email, setEmail] = useState('');
-  const [trap, setTrap] = useState('');
+  // const [trap, setTrap] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -129,7 +129,9 @@ export function FooterContent({ popularSearches }: { popularSearches: LinkItem[]
     if (!email) return;
     setStatus('loading');
     try {
-      await submitLead('newsletter', { email: email.trim(), hp: trap });
+      await
+        // submitLead('newsletter', { email: email.trim(), hp: trap });
+        submitLead('newsletter', { email: email.trim() })
       setStatus('success');
       setEmail('');
       setTimeout(() => setStatus('idle'), 4000);
@@ -203,7 +205,7 @@ export function FooterContent({ popularSearches }: { popularSearches: LinkItem[]
           </div>
           <div className="w-full max-w-md">
             <form onSubmit={handleSubscribe} className="relative flex w-full gap-2">
-              <Honeypot value={trap} onChange={setTrap} />
+              {/* <Honeypot value={trap} onChange={setTrap} /> */}
               <input
                 type="email"
                 required

@@ -6,6 +6,7 @@ import { validateLead, type LeadKind } from '@/lib/leads/schema';
 import { clientIp, hit } from '@/lib/leads/rate-limit';
 import { renderLeadEmail, type MailProperty } from '@/lib/mail/leads-email';
 import { sendNotification } from '@/lib/mail/send';
+import { automationReason } from '@/lib/leads/timing';
 
 const MAX_BODY_BYTES = 20_000;
 
@@ -33,9 +34,14 @@ export async function handleLead(kind: LeadKind, req: Request): Promise<NextResp
 
   // Honeypot: a hidden field real visitors never fill. Pretend success so bots learn nothing,
   // but log it so a wrongly dropped enquiry (e.g. a form-filler extension) can be diagnosed.
-  const trap = body && typeof body === 'object' ? (body as Record<string, unknown>).hp : undefined;
-  if (trap) {
-    console.warn(`[leads] ${kind} discarded: honeypot field was filled`);
+  // const trap = body && typeof body === 'object' ? (body as Record<string, unknown>).hp : undefined;
+  // if (trap) {
+  //   console.warn(`[leads] ${kind} discarded: honeypot field was filled`);
+  //   return json({ ok: true }, 201);
+  // }
+  const automated = automationReason(body);
+  if (automated) {
+    console.warn(`[leads] ${kind} discarded: ${automated}`);
     return json({ ok: true }, 201);
   }
 

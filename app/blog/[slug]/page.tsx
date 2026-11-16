@@ -569,7 +569,8 @@ export default function BlogDetailPage() {
                                             e.preventDefault();
                                             setSubStatus('loading');
                                             try {
-                                                await submitLead('newsletter', { email: subEmail.trim(), hp: subTrap });
+                                                // await submitLead('newsletter', { email: subEmail.trim(), hp: subTrap });
+                                                await submitLead('newsletter', { email: subEmail.trim() });
                                                 setSubStatus('done');
                                                 setSubEmail('');
                                             } catch (err) {

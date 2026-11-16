@@ -17,7 +17,7 @@ export function StickyEnquiryBar({
     const [dismissed, setDismissed] = useState(false);
     const [sent, setSent] = useState(false);
     const [phone, setPhone] = useState('');
-    const [trap, setTrap] = useState('');
+    // const [trap, setTrap] = useState('');
     const [submitting, setSubmitting] = useState(false);
     const [error, setError] = useState('');
 
@@ -83,7 +83,8 @@ export function StickyEnquiryBar({
                                 setSubmitting(true);
                                 setError('');
                                 try {
-                                    await submitLead('enquiry', { phone, propertySlug, source: 'callback-bar', hp: trap });
+                                    // await submitLead('enquiry', { phone, propertySlug, source: 'callback-bar', hp: trap });
+                                    await submitLead('enquiry', { phone, propertySlug, source: 'callback-bar' });
                                     setSent(true);
                                 } catch (err) {
                                     setError(err instanceof LeadSubmitError ? err.message : 'Something went wrong. Please try again.');
@@ -93,7 +94,7 @@ export function StickyEnquiryBar({
                             }}
                             className="flex items-center gap-3"
                         >
-                            <Honeypot value={trap} onChange={setTrap} />
+                            {/* <Honeypot value={trap} onChange={setTrap} /> */}
                             <label className="group relative">
                                 <Phone className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-400 transition-colors group-focus-within:text-red-500" />
                                 <input

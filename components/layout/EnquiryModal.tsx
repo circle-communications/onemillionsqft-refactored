@@ -34,7 +34,8 @@ function Field({
   );
 }
 
-const EMPTY = { name: '', phone: '', email: '', message: '', hp: '' };
+// const EMPTY = { name: '', phone: '', email: '', message: '', hp: '' };
+const EMPTY = { name: '', phone: '', email: '', message: '' };
 
 export interface EnquiryModalProps {
   open: boolean;
@@ -147,7 +148,7 @@ export function EnquiryModal({ open, onClose, propertySlug, heading }: EnquiryMo
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-              <Honeypot value={form.hp} onChange={(v) => setForm((p) => ({ ...p, hp: v }))} />
+              {/* <Honeypot value={form.hp} onChange={(v) => setForm((p) => ({ ...p, hp: v }))} /> */}
 
               <Field id="enq-name" label="Full Name" required>
                 <input
