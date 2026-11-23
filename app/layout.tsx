@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: { default: DEFAULT_TITLE, template: `%s | ${SITE.name}` },
   description: DESCRIPTION,
+
+  manifest: '/manifest.json',
+
   openGraph: {
     type: 'website',
     siteName: SITE.name,
@@ -28,6 +31,8 @@ export const revalidate = 300;
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+
+  themeColor: '#bc1f1a',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,0 +1,23 @@
+{
+    "name": "OneMillionSqFt",
+    "short_name": "OneMillionSqFt",
+    "description": "Discover verified flats, villas, plots and commercial spaces.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#ffffff",
+    "theme_color": "#bc1f1a",
+    "icons": [
+        {
+            "src": "https://res.cloudinary.com/dib2kvojz/image/upload/v1795425741/onemillionsqft_logo_red_192_ji0ptj.jpg",
+            "sizes": "192x192",
+            "type": "image/jpeg"
+        },
+        {
+            "src": "https://res.cloudinary.com/dib2kvojz/image/upload/v1795425728/onemillionsqft_logo_red_512_dvpsxq.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg"
+        }
+    ]
+}

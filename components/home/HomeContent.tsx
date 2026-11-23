@@ -52,6 +52,8 @@ import {
   possessionHref,
 } from '@/lib/search/links';
 import type { Property } from '@/types';
+import HomeHero from './HomeHero';
+import HomeSearchSection from './HomeSearchSection';
 
 /* ───────────────────────────── Props ───────────────────────────── */
 
@@ -253,6 +255,11 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
           </div>
         </div>
       </section>
+
+      {/* <HomeHero postPropertyHref={PATHS.postProperty} />
+      <HomeSearchSection keywords={HERO_KEYWORDS}>
+        <SearchBar />
+      </HomeSearchSection> */}
 
       {/* Stats */}
       <section className="bg-brand-600">
