@@ -604,7 +604,8 @@ export function Header({ variant = 'solid' }: HeaderProps) {
       {/* Main header — the full-width mega panel is a child so it shares this stacking context */}
       <header
         className={`${overlay ? 'fixed inset-x-0' : 'sticky'} top-0 z-50 transition-all duration-300 ${isTransparent
-          ? 'bg-transparent shadow-none'
+          // ? 'bg-transparent shadow-none'
+          ? 'bg-black/20 shadow-none'
           : `bg-white ${scrolled || openMega ? 'shadow-md' : 'border-b border-neutral-100'}`
           }`}
       >

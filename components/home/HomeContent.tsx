@@ -54,6 +54,7 @@ import {
 import type { Property } from '@/types';
 import HomeHero from './HomeHero';
 import HomeSearchSection from './HomeSearchSection';
+import { ChangingWord } from '@/components/home/ChangingWord';
 
 /* ───────────────────────────── Props ───────────────────────────── */
 
@@ -208,13 +209,16 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
         </div>
 
         <div className="container-x relative z-10 pt-20 pb-5">
-          <div className="max-w-3xl mb-8 animate-slide-up">
-            <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-white-600/90 backdrop-blur-xl text-white text-xs font-medium mb-4 border border-white/70">
+          <div className="max-w-3xl mb-6 animate-slide-up text-center">
+            {/* <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-white-600/90 backdrop-blur-xl text-white text-xs font-medium mb-4 border border-white/70">
               <ShieldCheck className="h-4 w-4" />
               Explore. Discover. Own.
-            </div>
-            <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-semibold text-white leading-tight mb-4">
+            </div> */}
+            {/* <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-semibold text-white leading-tight mb-4">
               Your Dream Property Awaits
+            </h1> */}
+            <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-semibold text-white leading-tight mb-4">
+              Your Dream <ChangingWord words={["Flat", "Plot", "Villa", "Space"]} /> Awaits
             </h1>
             <p className="text-sm sm:text-base lg:text-base text-white/80 leading-relaxed">
               Explore verified apartments, independent villas, plots, and commercial spaces from trusted builders.
@@ -223,7 +227,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
 
           <SearchBar />
 
-          <div className="flex flex-wrap items-center gap-2.5 mt-6">
+          {/* <div className="flex flex-wrap items-center gap-2.5 mt-6">
             <span className="text-white/80 text-xs font-medium mr-1">
               <TrendingUp className="inline-block h-4 w-4 mr-1 text-green-500" /> Popular Keywords
             </span>
@@ -236,11 +240,27 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
                 {label}
               </Link>
             ))}
+          </div> */}
+          <div className="mt-6 w-0 min-w-full">
+            <div className="flex flex-nowrap items-center gap-2.5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:flex-wrap sm:overflow-visible sm:whitespace-normal">
+              <span className="shrink-0 text-white/80 text-xs font-medium mr-1">
+                <TrendingUp className="inline-block h-4 w-4 mr-1 text-green-500" /> Popular Keywords
+              </span>
+              {HERO_KEYWORDS.map(({ label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="shrink-0 px-2 py-1 sm:px-3.5 sm:py-1 rounded-md bg-white/20 backdrop-blur-lg text-xs text-white font-medium transition-all duration-300 hover:bg-brand-600/50 hover:border-brand-600 hover:text-white"
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 pt-3 w-max max-w-[95%]">
-          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-1.5 rounded-2xl rounded-bl-none rounded-br-none bg-black/20 backdrop-blur-lg text-white/70 text-xs sm:text-sm border border-white/10 shadow-lg whitespace-nowrap">
+          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-1.5 rounded-2xl rounded-bl-none rounded-br-none bg-black/40 backdrop-blur-lg text-white/70 text-xs sm:text-sm border border-white/10 shadow-lg whitespace-nowrap">
             <span className="text-white/70">✦</span>
             <span>
               Do you Own a Property?{' '}
