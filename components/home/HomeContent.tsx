@@ -26,6 +26,7 @@ import {
   Warehouse,
   type LucideIcon,
 } from 'lucide-react';
+import Image from "next/image";
 
 import { SearchBar } from '@/components/home/SearchBar';
 import { PropertySmallCard } from '@/components/property/cards/PropertySmallCard';
@@ -80,7 +81,7 @@ const HERO_KEYWORDS: { label: string; href: string }[] = [
   { label: 'Ready to Move', href: possessionHref('ready-to-move') },
   { label: '2 BHK Flats', href: bhkHref([2], { category: ['flat-apartment'] }) },
   { label: 'Under Construction', href: possessionHref('under-construction') },
-  { label: 'Plots', href: categoryHref('residential-plot') },
+  // { label: 'Plots', href: categoryHref('residential-plot') },
   { label: 'Commercial Spaces', href: categoryHref('commercial-space') },
 ];
 
@@ -150,6 +151,40 @@ const TICKER = [
   'Trusted Builder Partners',
 ];
 
+const CREATIVES = [
+  {
+    id: "the-legacy",
+    src: "https://res.cloudinary.com/dib2kvojz/image/upload/v1795515073/WhatsApp_Image_2026-11-24_at_2.11.15_PM_fvamas.jpg",
+    alt: "The Legacy, Temple Green Township (Oragadam), 2 BHK senior living apartments",
+    href: "/properties/the-legacy", // optional, set to undefined if not clickable
+  },
+  {
+    id: "the-legacy",
+    src: "https://res.cloudinary.com/dib2kvojz/image/upload/v1795515073/WhatsApp_Image_2026-11-24_at_2.11.15_PM_fvamas.jpg",
+    alt: "The Legacy, Temple Green Township (Oragadam), 2 BHK senior living apartments",
+    href: "/properties/the-legacy", // optional, set to undefined if not clickable
+  },
+  {
+    id: "the-legacy",
+    src: "https://res.cloudinary.com/dib2kvojz/image/upload/v1795515073/WhatsApp_Image_2026-11-24_at_2.11.15_PM_fvamas.jpg",
+    alt: "The Legacy, Temple Green Township (Oragadam), 2 BHK senior living apartments",
+    href: "/properties/the-legacy", // optional, set to undefined if not clickable
+  },
+  {
+    id: "the-legacy",
+    src: "https://res.cloudinary.com/dib2kvojz/image/upload/v1795515073/WhatsApp_Image_2026-11-24_at_2.11.15_PM_fvamas.jpg",
+    alt: "The Legacy, Temple Green Township (Oragadam), 2 BHK senior living apartments",
+    href: "/properties/the-legacy", // optional, set to undefined if not clickable
+  },
+  {
+    id: "the-legacy",
+    src: "https://res.cloudinary.com/dib2kvojz/image/upload/v1795515073/WhatsApp_Image_2026-11-24_at_2.11.15_PM_fvamas.jpg",
+    alt: "The Legacy, Temple Green Township (Oragadam), 2 BHK senior living apartments",
+    href: "/properties/the-legacy", // optional, set to undefined if not clickable
+  },
+  // add more creatives here
+];
+
 /* ───────────────────────────── Small pieces ───────────────────────────── */
 
 function formatCount(n: number) {
@@ -184,7 +219,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
   const bengaluru = cities.find((c) => c.slug === 'bengaluru');
 
   const statBlocks = [
-    { label: 'Total Properties', value: stats.total },
+    { label: 'Available Properties', value: stats.total },
     { label: `Properties from ${chennai?.name ?? 'Chennai'}`, value: chennai?.count ?? 0 },
     { label: `Properties from ${bengaluru?.name ?? 'Bengaluru'}`, value: bengaluru?.count ?? 0 },
     { label: 'Trusted Builders', value: stats.builders },
@@ -205,7 +240,14 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             alt=""
             className="hidden md:block w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80" />
+
+          {/* <img
+            src="https://res.cloudinary.com/dib2kvojz/image/upload/v1795513119/city-concept-3d-rendering_wbab1q.jpg"
+            alt=""
+            className="hidden md:block w-full h-full object-cover"
+          /> */}
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80" /> */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60" />
         </div>
 
         <div className="container-x relative z-10 pt-20 pb-5">
@@ -217,11 +259,11 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             {/* <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-semibold text-white leading-tight mb-4">
               Your Dream Property Awaits
             </h1> */}
-            <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-semibold text-white leading-tight mb-4">
+            <h1 className="font-sans text-2xl sm:text-3xl md:text-3xl font-bold text-white leading-tight mb-4">
               Your Dream <ChangingWord words={["Flat", "Plot", "Villa", "Space"]} /> Awaits
             </h1>
             <p className="text-sm sm:text-base lg:text-base text-white/80 leading-relaxed">
-              Explore verified apartments, independent villas, plots, and commercial spaces from trusted builders.
+              Discover RERA-registered premium flats, plots, and commercial spaces from trusted developers.
             </p>
           </div>
 
@@ -242,7 +284,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             ))}
           </div> */}
           <div className="mt-6 w-0 min-w-full">
-            <div className="flex flex-nowrap items-center gap-2.5 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:flex-wrap sm:overflow-visible sm:whitespace-normal">
+            <div className="flex flex-nowrap items-center gap-2 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:flex-wrap sm:overflow-visible sm:whitespace-normal">
               <span className="shrink-0 text-white/80 text-xs font-medium mr-1">
                 <TrendingUp className="inline-block h-4 w-4 mr-1 text-green-500" /> Popular Keywords
               </span>
@@ -250,9 +292,10 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
                 <Link
                   key={label}
                   href={href}
-                  className="shrink-0 px-2 py-1 sm:px-3.5 sm:py-1 rounded-md bg-white/20 backdrop-blur-lg text-xs text-white font-medium transition-all duration-300 hover:bg-brand-600/50 hover:border-brand-600 hover:text-white"
+                  className="shrink-0 px-2 py-1 sm:px-3.5 sm:py-1 rounded-md bg-white/20 backdrop-blur-lg text-xs text-white font-medium transition-all duration-300 hover:bg-black/50 hover:border-brand-600 hover:text-white"
                 >
                   {label}
+                  <span className="ml-2">›</span>
                 </Link>
               ))}
             </div>
@@ -325,13 +368,63 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
         </div>
       </section>
 
+      {/* {CREATIVES.length > 0 && (
+        <section className="py-10 bg-white">
+          <div className="container-x">
+            <div className="flex items-end justify-between mb-10">
+              <div>
+                <span className="text-brand-500 font-semibold text-sm uppercase tracking-wider">Spotlight</span>
+                <h2 className="font-serif text-2xl md:text-2xl font-bold text-neutral-900 mt-2">Featured Launches</h2>
+              </div>
+              <SliderNav id="creatives" tone="light" />
+            </div>
+
+            <div className="relative">
+              <Swiper
+                modules={[Navigation, Autoplay]}
+                spaceBetween={20}
+                slidesPerView={1.15}
+                navigation={{ prevEl: ".creatives-prev", nextEl: ".creatives-next" }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                loop={CREATIVES.length > 4}
+                breakpoints={{
+                  640: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 },
+                  1280: { slidesPerView: 4 },
+                }}
+                className="!pb-12"
+              >
+                {CREATIVES.map(({ id, src, alt, href }) => {
+                  const card = (
+                    <div className="group relative aspect-square overflow-hidden rounded-xl shadow-md bg-neutral-200">
+                      <Image
+                        src={src}
+                        alt={alt}
+                        fill
+                        sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, (min-width:640px) 50vw, 90vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  );
+                  return (
+                    <SwiperSlide key={id}>
+                      {href ? <Link href={href}>{card}</Link> : card}
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </div>
+          </div>
+        </section>
+      )} */}
+
       {/* Property types */}
       <section className="pt-20 pb-10">
         <div className="container-x">
           <div className="flex items-center justify-between">
             <div className="text-left mb-12">
               <span className="text-brand-500 font-semibold text-sm uppercase">Explore by category</span>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mt-1 mb-3">Browse by Property Type</h2>
+              <h2 className="font-serif text-2xl md:text-2xl font-bold text-neutral-900 mt-1 mb-3">Browse by Property Type</h2>
               <p className="text-neutral-500 max-w-2xl">
                 From luxury apartments to independent villas, plots and commercial spaces, find the property type that suits you.
               </p>
@@ -377,7 +470,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             <div className="flex items-end justify-between mb-10">
               <div>
                 <span className="text-brand-500 font-semibold text-sm uppercase">Handpicked for you</span>
-                <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mt-1">Featured Properties</h2>
+                <h2 className="font-serif text-2xl md:text-2xl font-bold text-neutral-900 mt-1">Featured Properties</h2>
               </div>
               <SliderNav id="featured" tone="brand" />
             </div>
@@ -412,7 +505,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             <div className="flex items-end justify-between mb-10">
               <div>
                 <span className="text-brand-500 font-semibold text-sm uppercase tracking-wider">OneMillionSqFt&apos;s</span>
-                <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mt-2">Exclusive Projects</h2>
+                <h2 className="font-serif text-2xl md:text-2xl font-bold text-neutral-900 mt-2">Exclusive Projects</h2>
               </div>
               <SliderNav id="exclusive" tone="gold" />
             </div>
@@ -450,7 +543,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             <div className="flex items-end justify-between mb-10">
               <div>
                 <span className="text-brand-500 font-semibold text-sm uppercase tracking-wider">Explore More</span>
-                <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mt-2">Newly-added Properties</h2>
+                <h2 className="font-serif text-2xl md:text-2xl font-bold text-neutral-900 mt-2">Newly-added Properties</h2>
               </div>
               <SliderNav id="latest" tone="light" />
             </div>
@@ -488,7 +581,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
               </span>
               Find by availability
             </span>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mt-3 tracking-tight">Browse by Property Status</h2>
+            <h2 className="font-serif text-2xl md:text-2xl font-bold text-neutral-900 mt-3 tracking-tight">Browse by Property Status</h2>
             <p className="text-neutral-600 mt-4 text-base md:text-md leading-relaxed">
               Explore projects based on their current stage — from homes you can move into today to plots ready for construction.
             </p>
@@ -535,7 +628,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
           <div className="container-x">
             <div className="mb-10">
               <span className="text-brand-500 font-semibold text-sm uppercase tracking-wider">Handpicked for you</span>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mt-2">High-demand projects to invest now</h2>
+              <h2 className="font-serif text-2xl md:text-2xl font-bold text-neutral-900 mt-2">High-demand projects to invest now</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {inDemand.map((property) => (
@@ -551,7 +644,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
         <div className="container-x">
           <div className="mb-8">
             <span className="text-sm font-semibold uppercase text-brand-500">Find by configuration</span>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mt-2">Browse by BHK</h2>
+            <h2 className="font-serif text-2xl md:text-2xl font-bold text-neutral-900 mt-2">Browse by BHK</h2>
             <p className="text-neutral-600 mt-3 max-w-2xl">
               Explore homes based on the number of bedrooms that suit your lifestyle and requirements.
             </p>
@@ -587,7 +680,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
               <MapPin className="h-3.5 w-3.5" />
               Explore by Location
             </span>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold text-neutral-900 mb-3">Browse by Top Cities</h2>
+            <h2 className="font-serif text-2xl md:text-2xl font-bold text-neutral-900 mb-3">Browse by Top Cities</h2>
             <p className="text-neutral-500 max-w-2xl text-sm md:text-base">
               Explore curated properties in South India&apos;s most dynamic real estate markets
             </p>
@@ -661,10 +754,10 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
         <div className="container-x relative">
           <div className="mb-12 flex flex-col gap-6 md:mb-14 md:flex-row md:items-end md:justify-between">
             <div className="max-w-xl">
-              <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-brand-600">
+              {/* <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-brand-600">
                 From the journal
-              </span>
-              <h2 className="font-serif text-2xl font-bold leading-tight text-neutral-900 md:text-3xl">News &amp; Articles</h2>
+              </span> */}
+              <h2 className="font-serif text-2xl font-bold leading-tight text-neutral-900 md:text-2xl">News &amp; Articles</h2>
               <p className="mt-3 text-neutral-500">
                 Market trends, buying guides, and expert perspectives to help you make informed real estate decisions.
               </p>

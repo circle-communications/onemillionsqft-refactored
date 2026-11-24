@@ -15,7 +15,7 @@ export function PropertyCardNewLaunch({ property, href }: PropertyCardProps) {
   const { openEnquiry } = useEnquiry();
 
   return (
-    <div className="relative p-2 group bg-white rounded-xl overflow-hidden shadow-sm border border-neutral-300 hover:shadow-xl hover:border-brand-200 transition-all duration-300 animate-fade-in">
+    <div className="relative p-2 group bg-white rounded-xl overflow-hidden shadow-sm border border-neutral-200 hover:shadow-xl hover:border-brand-200 transition-all duration-300 animate-fade-in">
       <div className="relative h-56 overflow-hidden rounded-xl">
         <img
           src={property.image_url}
@@ -34,7 +34,7 @@ export function PropertyCardNewLaunch({ property, href }: PropertyCardProps) {
           </button>
         </div>
         {property.featured && (
-          <div className="absolute top-3 left-3 px-2 py-1 rounded bg-yellow-400 text-yellow-900 text-xs font-bold">
+          <div className="absolute top-2 left-2 px-2 py-1 rounded bg-yellow-400 text-yellow-900 text-xs font-bold">
             <Sparkles className="inline-block h-3.5 w-3.5 mr-1" />
             FEATURED
           </div>

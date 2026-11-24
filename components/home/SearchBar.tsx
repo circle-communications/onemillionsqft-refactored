@@ -62,7 +62,7 @@ export function SearchBar({ variant = 'hero' }: SearchBarProps) {
 
           <button
             type="submit"
-            className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-600/25 hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/30 active:scale-[0.98] transition-all duration-200"
+            className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 active:scale-[0.98] transition-all duration-200"
           >
             <Search className="h-4 w-4" />
             <span className="hidden sm:inline">Search</span>

@@ -28,7 +28,7 @@ export function ChangingWord({ words, interval = 2500 }: { words: string[]; inte
                     ref={(el) => {
                         refs.current[i] = el;
                     }}
-                    className={`inline-block whitespace-nowrap text-red-600 ${i === 0 ? "" : "absolute left-0 top-0"
+                    className={`inline-block whitespace-nowrap bg-gradient-to-t from-brand-600 to-brand-400 bg-clip-text text-transparent ${i === 0 ? "" : "absolute left-0 top-0"
                         } ${i === index
                             ? "translate-y-0 opacity-100 transition-all duration-500"
                             : i === prev
