@@ -4,6 +4,7 @@ import { HeaderTransparent } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { EnquiryProvider } from '@/components/layout/EnquiryProvider';
 import { SITE } from '@/lib/site';
+import { StickyChatBot } from '@/components/property/listing/StickyChatBot';
 
 // const DEFAULT_TITLE = 'Buy Flats, Villas, Plots & Commercial Spaces in Chennai & Bengaluru | One Million Sq.ft.';
 const DEFAULT_TITLE = 'India Real Estate Buy Sell Rent Property Portal - One Million Sq.ft.';
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <HeaderTransparent />
           <main className="flex-1">{children}</main>
           <Footer />
+          <StickyChatBot />
         </EnquiryProvider>
       </body>
     </html>

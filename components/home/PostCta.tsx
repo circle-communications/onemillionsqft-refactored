@@ -55,10 +55,10 @@ export function PostCta() {
                                 For Builders & Developers
                             </span>
 
-                            <h2 className="font-serif text-2xl font-bold leading-tight text-neutral-900 md:text-3xl">
+                            <h2 className="font-sans text-2xl font-bold leading-tight text-neutral-900 md:text-3xl">
                                 Have a {' '}
                                 <span className="bg-gradient-to-r from-brand-600 to-brand-400 bg-clip-text text-transparent">
-                                    property to sell?
+                                    Property for Sale?
                                 </span>
                             </h2>
 

@@ -22,6 +22,8 @@ import {
 } from '@/lib/properties/repository';
 import { getPropertyPath } from '@/lib/routes';
 import { createServerClient } from '@/lib/supabase/server';
+import { StickyChatBot } from '@/components/property/listing/StickyChatBot';
+import { PropertyAd, StickyPropertyAd } from '@/components/property/listing/StickyPropertyAd';
 
 type SearchParams = Record<string, string | string[] | undefined>;
 interface Props {
@@ -37,6 +39,18 @@ const getOptions = cache(async (): Promise<FilterOptions> => {
     return { ...STATIC_FILTER_OPTIONS, facets: EMPTY_FACETS };
   }
 });
+
+// TODO: replace with a featured/sponsored property from the DB or CMS
+const FEATURED_AD: PropertyAd = {
+  id: 'featured-1',
+  title: 'Malles Ahaana',
+  // image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600',
+  image: 'https://res.cloudinary.com/dib2kvojz/image/upload/v1788575812/ahaana-original_qfj3di.jpg',
+  location: 'Pallikaranai, Chennai',
+  price: '₹48 L onwards',
+  meta: '1.5, 2, 2.5 & 3 BHK',
+  href: '/property/1-2-3-bhk-flats-for-sale-in-pallikaranai',
+};
 
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
   const filters = parseSearchParams(searchParams);
@@ -121,6 +135,8 @@ export default async function PropertiesPage({ searchParams }: Props) {
           </div>
         </section>
       </div>
+      <StickyChatBot />
+      {/* <StickyPropertyAd ad={FEATURED_AD} /> */}
     </SearchProvider>
   );
 }
@@ -152,7 +168,7 @@ function ErrorState() {
     <div role="alert" className="bg-white rounded-xl border border-neutral-200 p-16 text-center">
       <TriangleAlert className="h-12 w-12 text-brand-400 mx-auto mb-4" />
       <h2 className="font-serif text-xl font-bold text-neutral-900 mb-2">We couldn&apos;t load properties</h2>
-      <p className="text-neutral-500 mb-6">Something went wrong on our side. Please try again in a moment.</p>
+      <p className="text-neutral-500 mb-6">Something went wrong. Please try again in a moment.</p>
       <Link
         href="/properties"
         className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-brand-600 text-white font-semibold hover:bg-brand-700 transition-colors"

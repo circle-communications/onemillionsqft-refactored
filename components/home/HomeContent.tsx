@@ -56,6 +56,9 @@ import type { Property } from '@/types';
 import HomeHero from './HomeHero';
 import HomeSearchSection from './HomeSearchSection';
 import { ChangingWord } from '@/components/home/ChangingWord';
+import { PropertyAd, StickyPropertyAd } from '../property/listing/StickyPropertyAd';
+import { StickyChatBot } from '../property/listing/StickyChatBot';
+import { StickyExpertTab } from '../property/listing/StickyExpertTab';
 
 /* ───────────────────────────── Props ───────────────────────────── */
 
@@ -210,6 +213,19 @@ function SliderNav({ id, tone }: { id: string; tone: 'brand' | 'light' | 'gold' 
     </div>
   );
 }
+
+// TODO: replace with a featured/sponsored property from the DB or CMS
+const FEATURED_AD: PropertyAd = {
+  id: 'featured-1',
+  title: 'Temple Green Township',
+  // image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600',
+  image: 'https://res.cloudinary.com/dib2kvojz/image/upload/v1795518627/WhatsApp_Image_2026-11-24_at_3.50.51_PM_whra8e.jpg',
+  // image: 'https://res.cloudinary.com/dib2kvojz/image/upload/v1795515073/WhatsApp_Image_2026-11-24_at_2.11.15_PM_fvamas.jpg',
+  location: 'Oragadam, Chennai',
+  price: '₹44.5 L onwards',
+  meta: '2 BHK',
+  href: '/property/arun-excello-temple-green-township-oragadam',
+};
 
 /* ───────────────────────────── Page ───────────────────────────── */
 
@@ -465,7 +481,8 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
       {featured.length > 0 && (
         <section className="relative pt-10 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-amber-50/40 via-white to-white pointer-events-none" />
-          <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-amber-100/30 blur-3xl rounded-full pointer-events-none" />
+          {/* <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-amber-100/30 blur-3xl rounded-full pointer-events-none" /> */}
+          <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brand-200/30 blur-3xl rounded-full pointer-events-none" />
           <div className="container-x relative">
             <div className="flex items-end justify-between mb-10">
               <div>
@@ -883,6 +900,9 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             </a>
           </div>
         </div>
+        <StickyPropertyAd ad={FEATURED_AD} />
+        {/* <StickyChatBot /> */}
+        {/* <StickyExpertTab /> */}
       </section>
     </div>
   );
