@@ -47,7 +47,7 @@ function openWhatsApp(message: string) {
 function Avatar({ className = '' }: { className?: string }) {
     return (
         <span
-            className={`flex shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-[10px] font-bold text-white ring-2 ring-white ${className}`}
+            className={`flex shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-xs font-medium text-white ring-2 ring-white ${className}`}
         >
             1M
         </span>

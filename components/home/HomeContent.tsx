@@ -256,6 +256,11 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             alt=""
             className="hidden md:block w-full h-full object-cover"
           />
+          {/* <img
+            src="https://res.cloudinary.com/dib2kvojz/image/upload/v1795686297/san-lorenzo-beach-buildings-scape-gijon-asturias-spain-hand-drawn-black-white-vector_fafj0o.png"
+            alt=""
+            className="hidden md:block w-full h-full object-cover"
+          /> */}
 
           {/* <img
             src="https://res.cloudinary.com/dib2kvojz/image/upload/v1795513119/city-concept-3d-rendering_wbab1q.jpg"
@@ -275,8 +280,69 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             {/* <h1 className="font-serif text-2xl sm:text-3xl md:text-3xl font-semibold text-white leading-tight mb-4">
               Your Dream Property Awaits
             </h1> */}
-            <h1 className="font-sans text-2xl sm:text-3xl md:text-3xl font-bold text-white leading-tight mb-4">
+            {/* <h1 className="font-sans text-2xl sm:text-3xl md:text-3xl font-bold text-white leading-tight mb-4">
               Your Dream <ChangingWord words={["Flat", "Plot", "Villa", "Space"]} /> Awaits
+            </h1> */}
+
+            {/* <h1 className="font-sans text-2xl sm:text-3xl md:text-3xl font-bold text-white leading-tight mb-4">
+              Your Dream{" "}
+              <span className="relative inline-block">
+                <ChangingWord words={["Flat", "Plot", "Villa", "Space"]} />
+                <svg
+                  className="absolute left-0 -bottom-2 w-full h-3 pointer-events-none"
+                  viewBox="0 0 200 20"
+                  preserveAspectRatio="none"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 8 C 40 2, 90 4, 198 6"
+                    stroke="#BC1F1A"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                  <path
+                    d="M20 16 C 70 11, 130 12, 185 14"
+                    stroke="#BC1F1A"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </svg>
+              </span>{" "}
+              Awaits
+            </h1> */}
+            <h1 className="font-sans text-2xl sm:text-3xl md:text-3xl font-bold text-white leading-tight mb-4">
+              Your Dream{" "}
+              <span className="relative inline-block">
+                <ChangingWord words={["Flat", "Plot", "Villa", "Space"]} />
+                <svg
+                  className="absolute left-0 -bottom-2 w-full h-3 pointer-events-none"
+                  viewBox="0 0 200 20"
+                  preserveAspectRatio="none"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 8 Q 100 12 198 6"
+                    stroke="#BC1F1A"
+                    // stroke="#E23737"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                  <path
+                    d="M30 15 Q 110 18 175 13"
+                    stroke="#BC1F1A"
+                    // stroke="#E23737"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </svg>
+              </span>{" "}
+              Awaits
             </h1>
             <p className="text-sm sm:text-base lg:text-base text-white/80 leading-relaxed">
               Discover RERA-registered premium flats, plots, and commercial spaces from trusted developers.
@@ -480,9 +546,10 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
       {/* Featured */}
       {featured.length > 0 && (
         <section className="relative pt-10 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-amber-50/40 via-white to-white pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-50/50 via-white to-white pointer-events-none" />
           {/* <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-amber-100/30 blur-3xl rounded-full pointer-events-none" /> */}
           <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brand-200/30 blur-3xl rounded-full pointer-events-none" />
+
           <div className="container-x relative">
             <div className="flex items-end justify-between mb-10">
               <div>
@@ -715,7 +782,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
 
                     <div className="absolute bottom-0 left-0 right-0 p-4 md:p-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
                       <div>
-                        <h3 className="font-serif text-3xl font-bold text-white mb-2">{city.name}</h3>
+                        <h3 className="font-serif text-3xl font-medium text-white mb-2">{city.name}</h3>
                         {copy && <p className="text-white/80 mb-3 max-w-xl text-sm md:text-base">{copy.blurb}</p>}
                         <div className="relative z-10 flex flex-wrap gap-2">
                           {copy?.localities.map((l) => (
@@ -757,6 +824,7 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
               );
             })}
           </div>
+
         </div>
       </section>
 
@@ -879,7 +947,15 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
       <TestimonialSection />
 
       {/* Closing CTA */}
-      <section className="py-20 bg-brand-600">
+      <section className="relative py-20 bg-brand-600">
+
+        {/* <img
+          src="https://res.cloudinary.com/dib2kvojz/image/upload/v1795686297/san-lorenzo-beach-buildings-scape-gijon-asturias-spain-hand-drawn-black-white-vector_fafj0o.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-20 brightness-0 invert"
+        /> */}
+
         <div className="container-x text-center">
           <h2 className="font-serif text-2xl md:text-4xl font-bold text-white mb-4">Ready to Find Your Dream Home?</h2>
           <p className="text-white/80 mb-8 max-w-2xl mx-auto">
@@ -903,6 +979,8 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
         <StickyPropertyAd ad={FEATURED_AD} />
         {/* <StickyChatBot /> */}
         {/* <StickyExpertTab /> */}
+        {/* Developed by Jagatheeswaran */}
+        {/* <p>Developed by Jagatheeswaran</p> */}
       </section>
     </div>
   );

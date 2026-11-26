@@ -64,15 +64,13 @@ function BuilderCard({ builder, index }: { builder: ShowcaseBuilder; index: numb
               role="tab"
               aria-selected={i === active}
               onClick={() => setActive(i)}
-              className={`relative shrink-0 whitespace-nowrap pb-2.5 text-sm font-semibold transition-colors ${
-                i === active ? 'text-brand-500' : 'text-neutral-500 hover:text-neutral-700'
-              }`}
+              className={`relative shrink-0 whitespace-nowrap pb-2.5 text-sm font-semibold transition-colors ${i === active ? 'text-brand-500' : 'text-neutral-500 hover:text-neutral-700'
+                }`}
             >
               {p.name}
               <span
-                className={`absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-brand-500 transition-transform duration-300 ${
-                  i === active ? 'scale-x-100' : 'scale-x-0'
-                }`}
+                className={`absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-brand-500 transition-transform duration-300 ${i === active ? 'scale-x-100' : 'scale-x-0'
+                  }`}
               />
             </button>
           ))}
@@ -83,7 +81,7 @@ function BuilderCard({ builder, index }: { builder: ShowcaseBuilder; index: numb
           {project.image ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              key={project.href}
+              key={`img-${project.href}`}
               src={project.image}
               alt={project.name}
               loading="lazy"
@@ -93,7 +91,7 @@ function BuilderCard({ builder, index }: { builder: ShowcaseBuilder; index: numb
             <div className="absolute inset-0 bg-gradient-to-br from-neutral-400 via-neutral-600 to-neutral-500" />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          <div key={project.href} className="builder-fade absolute bottom-0 left-0 right-0 flex items-end justify-between gap-3 p-4">
+          <div key={`caption-${project.href}`} className="builder-fade absolute bottom-0 left-0 right-0 flex items-end justify-between gap-3 p-4">
             <div className="min-w-0">
               <div className="truncate pb-1 font-sans text-base font-semibold text-white">{project.name}</div>
               <div className="flex items-center gap-1 text-xs text-white/80">

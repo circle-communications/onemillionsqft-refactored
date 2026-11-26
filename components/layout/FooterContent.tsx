@@ -61,7 +61,7 @@ const COMPANY: LinkItem[] = [
   { label: 'Careers', href: '/' },
   { label: 'News & Articles', href: PATHS.blog },
   { label: 'Contact Us', href: PATHS.contact },
-  { label: 'Privacy Policy', href: '/' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms & Conditions', href: '/' },
 ];
 
@@ -80,7 +80,7 @@ const FOR_BUILDERS: LinkItem[] = [
 ];
 
 const LEGAL: LinkItem[] = [
-  { label: 'Privacy Policy', href: '/' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
   { label: 'Terms of Service', href: '/' },
   { label: 'Sitemap', href: '/' },
   { label: 'RERA', href: 'https://rera.tn.gov.in/' },
@@ -357,6 +357,7 @@ export function FooterContent({ popularSearches }: { popularSearches: LinkItem[]
       <div className="border-t border-neutral-800">
         <div className="container-xx flex flex-col items-center justify-between gap-4 py-6 text-sm text-neutral-400 md:flex-row">
           <p>&copy; {new Date().getFullYear()} OneMillionSqFt. All Rights Reserved</p>
+          {/* <p>Developed by Jagatheeswaran</p> */}
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
             {LEGAL.map((l) => (
               <a key={l.label} href={l.href} className="transition-colors hover:text-brand-400">

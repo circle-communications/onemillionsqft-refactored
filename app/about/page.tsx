@@ -196,19 +196,19 @@ function Hero() {
                     <Eyebrow center>OneMillionSqFt</Eyebrow>
                     <h1 className="font-serif text-3xl font-semibold leading-[1.1] text-neutral-900 sm:text-5xl lg:text-6xl">
                         A million square feet is just a number until{' '}
-                        <span className="italic text-brand-600">someone calls it home.</span>
+                        <span className="text-brand-600">someone calls it home.</span>
                     </h1>
                     <p className="mx-auto mt-8 max-w-2xl text-md lg:text-lg leading-relaxed text-neutral-600">
-                        We help people discover, buy, and list properties with transparent pricing, verified information, and personalised support from real people.
+                        We help people discover, buy properties with transparent pricing, verified information, and personalised support.
                     </p>
                     <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
-                        <Link
+                        {/* <Link
                             href="/properties"
                             className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
                         >
                             Explore properties
                             <ArrowRight className="h-4 w-4" />
-                        </Link>
+                        </Link> */}
                         <a
                             href="#walkthrough"
                             className="inline-flex items-center gap-2 text-sm font-semibold text-neutral-700 transition-colors hover:text-brand-600 border border-neutral-600 px-7 py-3.5 rounded-full"
@@ -344,8 +344,8 @@ function AboutUs() {
                         <Eyebrow className="text-neutral-400">About us</Eyebrow>
                         <h2 className="font-serif text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-4xl">
                             Built in Chennai,
-                            <br />
-                            <span className="text-brand-400">for the way people live.</span>
+                            {/* <br /> */}
+                            <span className="text-brand-400"> for the way people live.</span>
                         </h2>
                         <div className="mt-6 max-w-full space-y-4 text-neutral-400 leading-relaxed">
                             <p>

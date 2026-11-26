@@ -159,21 +159,20 @@ function Hero() {
                     <Eyebrow center>Contact Us</Eyebrow>
                     <h1 className="font-serif text-3xl font-semibold leading-[1.1] text-neutral-900 sm:text-5xl lg:text-6xl">
                         Tell us{' '}
-                        <span className="italic text-brand-600">what home looks like to you.</span>
+                        <span className="text-brand-600">what home looks like to you.</span>
                     </h1>
                     <p className="mx-auto mt-8 max-w-3xl text-md leading-relaxed text-neutral-600 lg:text-lg">
-                        Buying, renting, listing or building. Send us a note and someone at OneMillionSqFt
+                        Buying or listing. Send us a note and someone at our team
                         will read it and get back to you.
                     </p>
                     <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
-                        <a
+                        {/* <a
                             href={CONTACT.phoneHref}
                             className="inline-flex items-center gap-2 rounded-full bg-neutral-900 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brand-600"
                         >
                             <Phone className="h-4 w-4" />
-                            {/* Call {CONTACT.phone} */}
                             Enquire Now
-                        </a>
+                        </a> */}
                         <a
                             href="#write"
                             className="inline-flex items-center gap-2 rounded-full border border-neutral-600 px-7 py-3.5 text-sm font-semibold text-neutral-700 transition-colors hover:text-brand-600"

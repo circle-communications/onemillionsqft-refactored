@@ -103,8 +103,8 @@ export default async function PropertiesPage({ searchParams }: Props) {
         <ListingToolbar />
 
         <section className="bg-neutral-100">
-          <div className="container-mx py-8">
-            <h1 className="mb-6 font-sans text-xl font-semibold text-neutral-900 md:text-xl">{heading}</h1>
+          <div className="container-mx py-4">
+            <h1 className="mb-4 font-sans text-xl font-semibold text-neutral-900 md:text-xl">{heading}</h1>
 
             <div className="flex gap-6">
               <FilterSidebar />
@@ -135,8 +135,9 @@ export default async function PropertiesPage({ searchParams }: Props) {
           </div>
         </section>
       </div>
-      <StickyChatBot />
+      {/* <StickyChatBot /> */}
       {/* <StickyPropertyAd ad={FEATURED_AD} /> */}
+      {/* <p>Developed by Jagatheeswaran</p> */}
     </SearchProvider>
   );
 }

@@ -68,7 +68,15 @@ export function TestimonialSection() {
     const pad = (n: number) => String(n).padStart(2, '0');
 
     return (
-        <section className="bg-neutral-900 py-20">
+        <section className="relative bg-neutral-900 py-20">
+
+            {/* <img
+                src="https://res.cloudinary.com/dib2kvojz/image/upload/v1795686297/san-lorenzo-beach-buildings-scape-gijon-asturias-spain-hand-drawn-black-white-vector_fafj0o.png"
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 h-full w-[full] object-cover opacity-40 brightness-0 invert"
+            /> */}
+
             <div className="container-x">
                 {/* <div className="mb-12 text-center">
                     <h2 className="mb-3 font-serif text-2xl font-bold text-white md:text-3xl">
