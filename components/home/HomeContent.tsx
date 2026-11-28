@@ -247,12 +247,18 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
       <section className="relative min-h-[520px] md:min-h-[540px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://res.cloudinary.com/dib2kvojz/image/upload/v1793249862/1M_Building_1_vdgnek.jpg"
+            // src="https://res.cloudinary.com/dib2kvojz/image/upload/v1793249862/1M_Building_1_vdgnek.jpg"
+            src="https://res.cloudinary.com/dib2kvojz/image/upload/v1795871623/Gemini_Generated_Image_ebtt3eebtt3eebtt_r7eufw.png"
             alt=""
             className="block md:hidden w-full h-full object-cover"
           />
-          <img
+          {/* <img
             src="https://res.cloudinary.com/dib2kvojz/image/upload/v1793249864/1M_Building_2_wcxwio.jpg"
+            alt=""
+            className="hidden md:block w-full h-full object-cover"
+          /> */}
+          <img
+            src="https://res.cloudinary.com/dib2kvojz/image/upload/v1795871623/Gemini_Generated_Image_ebtt3eebtt3eebtt_r7eufw.png"
             alt=""
             className="hidden md:block w-full h-full object-cover"
           />
@@ -268,7 +274,9 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
             className="hidden md:block w-full h-full object-cover"
           /> */}
           {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80" /> */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60" />
+          {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/20 to-transparent" /> */}
+          <div className="absolute inset-0 bg-gradient-to-b from-amber-400/20 via-neutral-600/40 to-transparent" />
+          {/* <div className="absolute inset-0 bg-gradient-to-br from-neutral-700 via-neutral-900 to-neutral-800" /> */}
         </div>
 
         <div className="container-x relative z-10 pt-20 pb-5">
@@ -367,14 +375,14 @@ export function HomeContent({ featured, exclusive, latest, cities, stats, builde
           </div> */}
           <div className="mt-6 w-0 min-w-full">
             <div className="flex flex-nowrap items-center gap-2 overflow-x-auto whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:flex-wrap sm:overflow-visible sm:whitespace-normal">
-              <span className="shrink-0 text-white/80 text-xs font-medium mr-1">
-                <TrendingUp className="inline-block h-4 w-4 mr-1 text-green-500" /> Popular Keywords
+              <span className="shrink-0 text-white text-xs font-medium mr-1">
+                <TrendingUp className="inline-block h-4 w-4 mr-1 text-green-500" /> Popular Searches
               </span>
               {HERO_KEYWORDS.map(({ label, href }) => (
                 <Link
                   key={label}
                   href={href}
-                  className="shrink-0 px-2 py-1 sm:px-3.5 sm:py-1 rounded-md bg-white/20 backdrop-blur-lg text-xs text-white font-medium transition-all duration-300 hover:bg-black/50 hover:border-brand-600 hover:text-white"
+                  className="shrink-0 px-2 py-1 sm:px-3.5 sm:py-1 rounded-md bg-black/20 backdrop-blur-lg text-xs text-white font-medium transition-all duration-300 hover:bg-black/50 hover:border-brand-600 hover:text-white"
                 >
                   {label}
                   <span className="ml-2">›</span>

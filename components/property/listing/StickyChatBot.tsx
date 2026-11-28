@@ -201,7 +201,7 @@ export function StickyChatBot() {
                             </div>
                         </div> */}
 
-                        <p className="relative mt-4 text-lg font-semibold leading-snug">
+                        <p className="relative mt-4 text-md font-semibold leading-snug">
                             Find your perfect property,
                             <br />
                             <span className="text-white/80">with expert guidance.</span>
@@ -238,14 +238,14 @@ export function StickyChatBot() {
 
                     <div className={`flex items-end gap-2 transition-all duration-300 ${reveal(step >= 1)}`}>
                         <Avatar className="h-6 w-6" />
-                        <p className="w-fit max-w-[85%] rounded-2xl rounded-bl-md border border-neutral-200 bg-white px-3.5 py-2.5 text-sm text-neutral-800 shadow-sm">
+                        <p className="w-fit max-w-[85%] rounded-2xl rounded-bl-md border border-neutral-200 bg-white px-3.5 py-2.5 text-xs text-neutral-800 shadow-sm">
                             Hi there 👋 I&apos;m your property expert.
                         </p>
                     </div>
 
                     <div className={`flex items-end gap-2 transition-all duration-300 ${reveal(step >= 2)}`}>
                         <span className="h-6 w-6 shrink-0" aria-hidden="true" />
-                        <p className="w-fit max-w-[85%] rounded-2xl rounded-bl-md border border-neutral-200 bg-white px-3.5 py-2.5 text-sm text-neutral-800 shadow-sm">
+                        <p className="w-fit max-w-[85%] rounded-2xl rounded-bl-md border border-neutral-200 bg-white px-3.5 py-2.5 text-xs text-neutral-800 shadow-sm">
                             What are you looking for today?
                         </p>
                     </div>
@@ -268,7 +268,7 @@ export function StickyChatBot() {
                                         <Icon className="h-4 w-4" aria-hidden="true" />
                                     </span>
                                     <span className="min-w-0 flex-1">
-                                        <span className="block truncate text-sm font-semibold text-neutral-900">{opt.title}</span>
+                                        <span className="block truncate text-[13px] font-semibold text-neutral-900">{opt.title}</span>
                                         <span className="block truncate text-xs text-neutral-500">{opt.desc}</span>
                                     </span>
                                     <ChevronRight
@@ -291,7 +291,7 @@ export function StickyChatBot() {
                             tabIndex={open ? 0 : -1}
                             placeholder="Type your message…"
                             aria-label="Type your message"
-                            className="min-w-0 flex-1 rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 transition-colors focus:border-brand-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-600/20"
+                            className="min-w-0 flex-1 rounded-xl border border-neutral-200 bg-neutral-50 px-3.5 py-2.5 text-xs text-neutral-900 placeholder:text-neutral-400 transition-colors focus:border-brand-600 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-600/20"
                         />
                         <button
                             type="submit"
